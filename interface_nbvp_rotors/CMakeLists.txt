@@ -5,15 +5,19 @@ find_package(catkin REQUIRED COMPONENTS
   trajectory_msgs
   mav_msgs
   tf
+
 )
 
-include_directories(${Eigen_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
+
+include_directories(${Eigen_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS} ../../../devel/include)
 
 catkin_package(
-  INCLUDE_DIRS ${Eigen_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS}
+  INCLUDE_DIRS ${Eigen_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS} 
   LIBRARIES ${catkin_LIBRARIES}
   CATKIN_DEPENDS trajectory_msgs mav_msgs tf
 )
+
+
 
 add_executable(exploration src/exploration.cpp)
 target_link_libraries(exploration
